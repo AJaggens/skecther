@@ -2,9 +2,11 @@ const gridContainer = document.getElementById('cell-container')
 let gridSide = 4
 let cellCount = gridSide ** 2
 let cellSide = 896 / gridSide
+let currColor = 'red'
 
 generateGrid(cellCount)
 
+//set of grid controls
 const gridControl = document.getElementById('grid-size')
 gridControl.addEventListener(`input`, function() {
     clearGrid()
@@ -12,6 +14,13 @@ gridControl.addEventListener(`input`, function() {
     cellCount = gridSide ** 2
     cellSide = 896 / gridSide
     generateGrid(cellCount)
+})
+
+//set of color controls
+const colorPicker = document.getElementById('set-color')
+colorPicker.addEventListener('click', () => {
+    currColor = document.getElementById('curr-color').value
+    colorPicker.style.backgroundColor = currColor
 })
 
 //grid generator
@@ -32,7 +41,7 @@ function fillCellArray(count, array) {
         cell.style.width = `${cellSide}px`
         cell.style.height = `${cellSide}px`
         cell.addEventListener('mousedown', () => {
-            cell.classList.add('black')
+            cell.style.backgroundColor = `${currColor}`
             })
         array.push(cell)
     }
@@ -44,6 +53,8 @@ function clearGrid() {
         gridContainer.removeChild(gridContainer.firstChild)
     }
 }
+
+
 
 
 
