@@ -25,7 +25,7 @@ function generateGrid(count) {
 
 //create an array of cells to fill container with assigned id class and height width
 function fillCellArray(count, array) {
-    for (let i = 1; (i - 1) < count; i++ ) {
+    for (let i = 0; i < count; i++ ) {
         const cell = document.createElement('div')
         cell.classList.add('grid-cell')
         cell.setAttribute('id', `${i}`)

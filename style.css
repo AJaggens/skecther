@@ -11,10 +11,6 @@ body {
     margin-top: 64px;
 }
 
-.grid-cell + .black {
-    background-color: black;
-}
-
 
 #cell-container {
     display: flex;
@@ -34,4 +30,6 @@ body {
     background-color: darkgray;
 }
 
-
+.grid-cell.black {
+    background-color: black;
+}
