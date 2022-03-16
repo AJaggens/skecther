@@ -12,7 +12,6 @@ gridControl.addEventListener(`input`, function() {
     cellCount = gridSide ** 2
     cellSide = 896 / gridSide
     generateGrid(cellCount)
-    console.log(gridSide)
 })
 
 //grid generator
@@ -26,12 +25,15 @@ function generateGrid(count) {
 
 //create an array of cells to fill container with assigned id class and height width
 function fillCellArray(count, array) {
-    for (let i = 0; i < count; i++ ) {
+    for (let i = 1; (i - 1) < count; i++ ) {
         const cell = document.createElement('div')
         cell.classList.add('grid-cell')
         cell.setAttribute('id', `${i}`)
         cell.style.width = `${cellSide}px`
         cell.style.height = `${cellSide}px`
+        cell.addEventListener('mousedown', () => {
+            cell.classList.add('black')
+            })
         array.push(cell)
     }
 }
@@ -42,6 +44,7 @@ function clearGrid() {
         gridContainer.removeChild(gridContainer.firstChild)
     }
 }
+
 
 
 
