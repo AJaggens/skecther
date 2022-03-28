@@ -2,7 +2,7 @@ const gridContainer = document.getElementById('cell-container')
 let gridSide = 4
 let cellCount = gridSide ** 2
 let cellSide = 896 / gridSide
-let currColor = 'red'
+let currColor = 'black'
 
 generateGrid(cellCount)
 
@@ -17,10 +17,10 @@ gridControl.addEventListener(`input`, function() {
 })
 
 //set of color controls
-const colorPicker = document.getElementById('set-color')
+const colorPicker = document.getElementById('set-color-button')
 colorPicker.addEventListener('click', () => {
     currColor = document.getElementById('curr-color').value
-    colorPicker.style.backgroundColor = currColor
+    colorPicker.style.backgroundColor = currColor 
 })
 
 //grid generator
@@ -41,7 +41,7 @@ function fillCellArray(count, array) {
         cell.style.width = `${cellSide}px`
         cell.style.height = `${cellSide}px`
         cell.addEventListener('mousedown', () => {
-            cell.style.backgroundColor = `${currColor}`
+            cell.style.backgroundColor = `${currColor}` //this is trash, do it like: mousedown = enable coloring, on mouseover if coloring == true {then} {else}
             })
         array.push(cell)
     }

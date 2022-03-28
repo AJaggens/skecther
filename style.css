@@ -31,6 +31,11 @@ body {
     margin-right: 50px;
 }
 
+#set-color-button {
+    margin: 8px;
+    padding: 8px;
+}
+
 .grid-cell {
     background-color: white;
     border: 1px solid lightgray;
@@ -38,9 +43,5 @@ body {
 }
 
 .grid-cell:hover {
-    background-color: darkgray;
-}
-
-.grid-cell.black {
-    background-color: black;
+    background-color: darkgray !important;
 }
