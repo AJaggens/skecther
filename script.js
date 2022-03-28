@@ -1,8 +1,23 @@
 const gridContainer = document.getElementById('cell-container')
+
+//setting up listeners for mode switch
+document.addEventListener('mousedown', () => {
+    currMode = `enabled`
+    console.log(currMode)
+})
+document.addEventListener('mouseup', () => {
+    currMode = `disabled`
+    console.log(currMode)
+})
+
+//grid related vars
 let gridSide = 4
 let cellCount = gridSide ** 2
 let cellSide = 896 / gridSide
-let currColor = 'black'
+
+//mode related vars
+let currMode = 'disabled'
+let currColor = '#000000'
 
 generateGrid(cellCount)
 
@@ -38,11 +53,12 @@ function fillCellArray(count, array) {
         const cell = document.createElement('div')
         cell.classList.add('grid-cell')
         cell.setAttribute('id', `${i}`)
+        cell.setAttribute('draggable', false)
         cell.style.width = `${cellSide}px`
         cell.style.height = `${cellSide}px`
-        cell.addEventListener('mousedown', () => {
-            cell.style.backgroundColor = `${currColor}` //this is trash, do it like: mousedown = enable coloring, on mouseover if coloring == true {then} {else}
-            })
+        cell.addEventListener('pointerenter', () => {
+            if (currMode == 'enabled') { cell.style.backgroundColor = `${currColor}` }
+    })
         array.push(cell)
     }
 }
