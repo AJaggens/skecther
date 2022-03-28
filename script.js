@@ -32,10 +32,9 @@ gridControl.addEventListener(`input`, function() {
 })
 
 //set of color controls
-const colorPicker = document.getElementById('set-color-button')
-colorPicker.addEventListener('click', () => {
+const colorPicker = document.getElementById('curr-color')
+colorPicker.addEventListener('input', () => {
     currColor = document.getElementById('curr-color').value
-    colorPicker.style.backgroundColor = currColor 
 })
 
 //grid generator
@@ -56,7 +55,7 @@ function fillCellArray(count, array) {
         cell.setAttribute('draggable', false)
         cell.style.width = `${cellSide}px`
         cell.style.height = `${cellSide}px`
-        cell.addEventListener('pointerenter', () => {
+        cell.addEventListener('pointermove', () => {
             if (currMode == 'enabled') { cell.style.backgroundColor = `${currColor}` }
     })
         array.push(cell)

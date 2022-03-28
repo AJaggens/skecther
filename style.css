@@ -44,6 +44,22 @@ body {
     padding: 8px;
 }
 
+#curr-color {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: none;
+    padding: 5px;
+}
+
+#curr-color::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+}
+
 .grid-cell {
     background-color: white;
     border: 1px solid lightgray;
