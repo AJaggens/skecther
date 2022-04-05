@@ -35,9 +35,15 @@ body {
 #control-group {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     margin-right: 50px;
 }
+
+#control-group > * {
+    margin: 8px;
+} 
 
 #set-color-button {
     margin: 8px;

@@ -69,6 +69,10 @@ function clearGrid() {
     }
 }
 
+function resetGrid() {
+    clearGrid()
+    generateGrid(cellcount)
+}
 
 
 
