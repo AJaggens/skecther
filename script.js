@@ -18,8 +18,21 @@ let cellSide = 896 / gridSide
 //mode related vars
 let currMode = 'disabled'
 let currColor = '#000000'
+let rainbowMode = 'disabled'
 
 generateGrid(cellCount)
+
+document.getElementById('eraser-button').addEventListener('click', () => {
+    currColor = '#ffffff'
+    document.getElementById('curr-color').value = currColor
+})
+
+document.getElementById('reset-button').addEventListener('click', () => resetGrid())
+
+document.getElementById('rainbow-button').addEventListener('click', () => {
+    if (rainbowMode == 'disabled') {rainbowMode = 'enabled'}
+    else {rainbowMode = 'disabled'}
+})
 
 //set of grid controls
 const gridControl = document.getElementById('grid-size')
@@ -36,6 +49,7 @@ const colorPicker = document.getElementById('curr-color')
 colorPicker.addEventListener('input', () => {
     currColor = document.getElementById('curr-color').value
 })
+
 
 //grid generator
 function generateGrid(count) {
@@ -56,7 +70,15 @@ function fillCellArray(count, array) {
         cell.style.width = `${cellSide}px`
         cell.style.height = `${cellSide}px`
         cell.addEventListener('pointermove', () => {
-            if (currMode == 'enabled') { cell.style.backgroundColor = `${currColor}` }
+            if (currMode == 'enabled') { 
+                if (rainbowMode == 'enabled') {
+                    genRandColor()
+                    cell.style.backgroundColor = `${currColor}`
+                }
+                else {cell.style.backgroundColor = `${currColor}`}
+                    
+                     
+        }
     })
         array.push(cell)
     }
@@ -71,13 +93,16 @@ function clearGrid() {
 
 function resetGrid() {
     clearGrid()
-    generateGrid(cellcount)
+    generateGrid(cellCount)
 }
 
 
+//to make rainbow painter create a var to store mode, add to fillCellArray() conditional check for enabled rainbowmode, set color to random
 
-
-
+function genRandColor() {
+    currColor = "#" + Math.floor(Math.random()*16777215).toString(16)
+    console.log(currColor)
+}
 
 
 

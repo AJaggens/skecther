@@ -9,7 +9,7 @@
 * {
     padding: 0px;
     margin: 0px;
-    background-color: black;
+    background-color: darkslategray;
     color: white;
 }
 
@@ -17,6 +17,13 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 64px;
+}
+
+button {
+    width: 140px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 24px;
 }
 
 #main-container {
