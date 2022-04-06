@@ -25,6 +25,8 @@ generateGrid(cellCount)
 document.getElementById('eraser-button').addEventListener('click', () => {
     currColor = '#ffffff'
     document.getElementById('curr-color').value = currColor
+    if (rainbowMode == 'enabled') {rainbowMode = 'disabled'
+    document.getElementById('rainbow-button').style.borderColor = 'red'}
 })
 
 document.getElementById('reset-button').addEventListener('click', () => resetGrid())
