@@ -30,8 +30,14 @@ document.getElementById('eraser-button').addEventListener('click', () => {
 document.getElementById('reset-button').addEventListener('click', () => resetGrid())
 
 document.getElementById('rainbow-button').addEventListener('click', () => {
-    if (rainbowMode == 'disabled') {rainbowMode = 'enabled'}
-    else {rainbowMode = 'disabled'}
+    if (rainbowMode == 'disabled') {
+        rainbowMode = 'enabled'
+        document.getElementById('rainbow-button').style.borderColor = 'springgreen'
+    }
+    else {
+        rainbowMode = 'disabled'
+        document.getElementById('rainbow-button').style.borderColor = 'red'
+        }
 })
 
 //set of grid controls
