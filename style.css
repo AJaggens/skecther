@@ -84,5 +84,6 @@ button {
 }
 
 .grid-cell:hover {
-    background-color: darkgray !important;
+    border-color: black !important;
+    border-width: 2px !important;
 }
