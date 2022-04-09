@@ -104,13 +104,12 @@ function resetGrid() {
     generateGrid(cellCount)
 }
 
-
-//to make rainbow painter create a var to store mode, add to fillCellArray() conditional check for enabled rainbowmode, set color to random
-
 function genRandColor() {
     currColor = "#" + Math.floor(Math.random()*16777215).toString(16)
     document.getElementById('curr-color').value = currColor
 }
 
-
+//todo
+// create a way to export image
+//
 
